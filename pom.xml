@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.satellite_api_master</groupId>
-	<artifactId>satellite_management</artifactId>
+	<artifactId>voter_management</artifactId>
 	<version>0.0.1</version>
 	<name>satellite_management</name>
 	<description>Satellite launching and management service</description>
