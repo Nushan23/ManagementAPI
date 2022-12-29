@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface ManagementInterface {
 
-    public ManagementModel launchVoter(ManagementModel managementModel);
+    public ManagementModel registerVoter(ManagementModel managementModel);
 
     public ManagementModel updateData(ManagementModel managementModel);
 
-    public List<ManagementModel> getLaunchData();
+    public List<ManagementModel> getRegisteredData();
 
-    public Optional<ManagementModel> getLaunchDataById(long id);
+    public Optional<ManagementModel> getRegisteredDataById(long id);
 
     public void decommissionVoter(long id);
 }

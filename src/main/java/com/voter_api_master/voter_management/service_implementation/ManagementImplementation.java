@@ -16,29 +16,26 @@ public class ManagementImplementation implements ManagementInterface {
     @Autowired
     private ManagementRepository managementRepository;
     @Override
-    public ManagementModel launchVoter(ManagementModel managementModel) {
+    public ManagementModel registerVoter(ManagementModel managementModel) {
         return managementRepository.save(managementModel);
     }
 
     @Override
     public ManagementModel updateData(ManagementModel managementModel) {
         ManagementModel existingManagementModel = managementRepository.findById(managementModel.getVoterId()).orElse(null);
-        existingManagementModel.setOrbit(managementModel.getOrbit());
-        existingManagementModel.setCurrentLocation(managementModel.getCurrentLocation());
-        existingManagementModel.setPowerPercentage(managementModel.getPowerPercentage());
         existingManagementModel.setStatus(managementModel.getStatus());
-        existingManagementModel.setLaunchedDate(managementModel.getLaunchedDate());
+        existingManagementModel.setRegisteredDate(managementModel.getRegisteredDate());
         return managementRepository.save(existingManagementModel);
 
     }
 
     @Override
-    public List<ManagementModel> getLaunchData() {
+    public List<ManagementModel> getRegisteredData() {
         return (List<ManagementModel>) managementRepository.findAll();
     }
 
     @Override
-    public Optional<ManagementModel> getLaunchDataById(long id) {
+    public Optional<ManagementModel> getRegisteredDataById(long id) {
         return (Optional<ManagementModel>) managementRepository.findById(id);
     }
 

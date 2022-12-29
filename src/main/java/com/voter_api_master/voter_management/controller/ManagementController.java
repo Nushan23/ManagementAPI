@@ -16,21 +16,21 @@ public class ManagementController {
     @Autowired
     private ManagementImplementation managementImplementation;
 
-    @PostMapping(value = "launchVoter")
+    @PostMapping(value = "registerVoter")
     public ManagementModel saveCatalog(@RequestBody ManagementModel managementModel){
-        System.out.println("Voter launched successfully");
-        managementImplementation.launchVoter((managementModel));
+        System.out.println("Voter registered successfully");
+        managementImplementation.registerVoter((managementModel));
         return managementModel;
     }
 
-    @GetMapping(value = "getLaunchData")
-    public List<ManagementModel> getLaunchData(){
-        return  managementImplementation.getLaunchData();
+    @GetMapping(value = "getRegisterData")
+    public List<ManagementModel> getRegisterData(){
+        return  managementImplementation.getRegisteredData();
     }
 
-    @GetMapping(value = "getLaunchDataById/{id}")
-    public ManagementModel getLaunchDataById(@PathVariable ("id") Long id){
-        Optional<ManagementModel> dataRow = managementImplementation.getLaunchDataById(id);
+    @GetMapping(value = "getRegisterDataById/{id}")
+    public ManagementModel getRegisterDataById(@PathVariable ("id") Long id){
+        Optional<ManagementModel> dataRow = managementImplementation.getRegisteredDataById(id);
         if(dataRow.isPresent()){
             return dataRow.get();
         }

@@ -8,23 +8,17 @@ public class ManagementModel {
 
     @Id
     private long voterId;
-    private String orbit;
-    private String currentLocation;
-    private String powerPercentage;
     private String status;
-    private Date launchedDate = new Date();
+    private Date registeredDate = new Date();
     public ManagementModel(){
         super();
     }
 
-    public ManagementModel(long voterId, String orbit, String currentLocation, String powerPercentage,
-                           String status, Date launchedDate) {
+    public ManagementModel(long voterId,
+                           String status, Date registeredDate) {
         this.voterId = voterId;
-        this.orbit = orbit;
-        this.currentLocation = currentLocation;
-        this.powerPercentage = powerPercentage;
         this.status = status;
-        this.launchedDate = launchedDate;
+        this.registeredDate = registeredDate;
     }
 
 
@@ -36,30 +30,6 @@ public class ManagementModel {
         this.voterId = voterId;
     }
 
-    public String getOrbit() {
-        return orbit;
-    }
-
-    public void setOrbit(String orbit) {
-        this.orbit = orbit;
-    }
-
-    public String getCurrentLocation() {
-        return currentLocation;
-    }
-
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
-    }
-
-    public String getPowerPercentage() {
-        return powerPercentage;
-    }
-
-    public void setPowerPercentage(String powerPercentage) {
-        this.powerPercentage = powerPercentage;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -68,11 +38,11 @@ public class ManagementModel {
         this.status = status;
     }
 
-    public Date getLaunchedDate() {
-        return launchedDate;
+    public Date getRegisteredDate() {
+        return registeredDate;
     }
 
-    public void setLaunchedDate(Date launchedDate) {
-        this.launchedDate = launchedDate;
+    public void setRegisteredDate(Date registeredDate) {
+        this.registeredDate = registeredDate;
     }
 }
