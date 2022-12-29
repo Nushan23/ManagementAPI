@@ -1,10 +1,10 @@
-package com.satellite_api_master.satellite_management.service_implementation;
+package com.voter_api_master.voter_management.service_implementation;
 
 
 import java.util.Optional;
-import com.satellite_api_master.satellite_management.model.ManagementModel;
-import com.satellite_api_master.satellite_management.repository.ManagementRepository;
-import com.satellite_api_master.satellite_management.service_interface.ManagementInterface;
+import com.voter_api_master.voter_management.model.ManagementModel;
+import com.voter_api_master.voter_management.repository.ManagementRepository;
+import com.voter_api_master.voter_management.service_interface.ManagementInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,13 +16,13 @@ public class ManagementImplementation implements ManagementInterface {
     @Autowired
     private ManagementRepository managementRepository;
     @Override
-    public ManagementModel launchSatellite(ManagementModel managementModel) {
+    public ManagementModel launchVoter(ManagementModel managementModel) {
         return managementRepository.save(managementModel);
     }
 
     @Override
     public ManagementModel updateData(ManagementModel managementModel) {
-        ManagementModel existingManagementModel = managementRepository.findById(managementModel.getSatelliteId()).orElse(null);
+        ManagementModel existingManagementModel = managementRepository.findById(managementModel.getVoterId()).orElse(null);
         existingManagementModel.setOrbit(managementModel.getOrbit());
         existingManagementModel.setCurrentLocation(managementModel.getCurrentLocation());
         existingManagementModel.setPowerPercentage(managementModel.getPowerPercentage());
@@ -43,7 +43,7 @@ public class ManagementImplementation implements ManagementInterface {
     }
 
     @Override
-    public void decommissionSatellite(long id) {
+    public void decommissionVoter(long id) {
         managementRepository.deleteById(id);
 
     }

@@ -1,13 +1,13 @@
-package com.satellite_api_master.satellite_management.model;
+package com.voter_api_master.voter_management.model;
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "satellite_management_table",catalog = "management_db")
+@Table(name = "voter_management_table",catalog = "management_db")
 public class ManagementModel {
 
     @Id
-    private long satelliteId;
+    private long voterId;
     private String orbit;
     private String currentLocation;
     private String powerPercentage;
@@ -17,9 +17,9 @@ public class ManagementModel {
         super();
     }
 
-    public ManagementModel(long satelliteId, String orbit, String currentLocation, String powerPercentage,
+    public ManagementModel(long voterId, String orbit, String currentLocation, String powerPercentage,
                            String status, Date launchedDate) {
-        this.satelliteId = satelliteId;
+        this.voterId = voterId;
         this.orbit = orbit;
         this.currentLocation = currentLocation;
         this.powerPercentage = powerPercentage;
@@ -28,12 +28,12 @@ public class ManagementModel {
     }
 
 
-    public long getSatelliteId() {
-        return satelliteId;
+    public long getVoterId() {
+        return voterId;
     }
 
-    public void setSatelliteId(long satelliteId) {
-        this.satelliteId = satelliteId;
+    public void setVoterId(long voterId) {
+        this.voterId = voterId;
     }
 
     public String getOrbit() {

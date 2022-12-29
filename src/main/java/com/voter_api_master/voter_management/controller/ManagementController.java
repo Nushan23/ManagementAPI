@@ -1,8 +1,8 @@
-package com.satellite_api_master.satellite_management.controller;
+package com.voter_api_master.voter_management.controller;
 
 import java.util.Optional;
-import com.satellite_api_master.satellite_management.model.ManagementModel;
-import com.satellite_api_master.satellite_management.service_implementation.ManagementImplementation;
+import com.voter_api_master.voter_management.model.ManagementModel;
+import com.voter_api_master.voter_management.service_implementation.ManagementImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,10 +16,10 @@ public class ManagementController {
     @Autowired
     private ManagementImplementation managementImplementation;
 
-    @PostMapping(value = "launchSatellite")
+    @PostMapping(value = "launchVoter")
     public ManagementModel saveCatalog(@RequestBody ManagementModel managementModel){
-        System.out.println("Satellite launched successfully");
-        managementImplementation.launchSatellite((managementModel));
+        System.out.println("Voter launched successfully");
+        managementImplementation.launchVoter((managementModel));
         return managementModel;
     }
 
@@ -42,10 +42,10 @@ public class ManagementController {
         return managementImplementation.updateData(managementModel);
     }
 
-    @DeleteMapping("decommissionSatellite")
-    public String decommissionSatellite(@RequestParam long id){
-        managementImplementation.decommissionSatellite(id);
-        return "Satellite deleted!";
+    @DeleteMapping("decommissionVoter")
+    public String decommissionVoter(@RequestParam long id){
+        managementImplementation.decommissionVoter(id);
+        return "Voter deleted!";
     }
 
 }

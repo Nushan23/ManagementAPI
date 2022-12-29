@@ -1,4 +1,4 @@
-package com.satellite_api_master.satellite_management;
+package com.voter_api_master.voter_management;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

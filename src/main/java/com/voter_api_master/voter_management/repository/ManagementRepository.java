@@ -1,7 +1,7 @@
-package com.satellite_api_master.satellite_management.repository;
+package com.voter_api_master.voter_management.repository;
 
 
-import com.satellite_api_master.satellite_management.model.ManagementModel;
+import com.voter_api_master.voter_management.model.ManagementModel;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,2 +1,2 @@
 # ManagementAPI
-Satellite Management API
+Voter Management API
