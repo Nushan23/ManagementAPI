@@ -5,7 +5,7 @@ spring:
   datasource:
     username: root
     password: root1234
-    url: jdbc:mysql://management.c5zpdwkp3drl.ap-southeast-1.rds.amazonaws.com:3306/management_db
+    url: jdbc:mysql://management.coohhafd2yfo.us-east-2.rds.amazonaws.com:3306/management_details
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
